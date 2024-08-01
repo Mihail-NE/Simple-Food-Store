@@ -4,14 +4,14 @@
     cursor: pointer;
     transition: background 0.25s;
     font-size: 16px;
-    color: white;
+    color: var(--white-color);
     border: none;
 }
 
-.accent:hover {
-    background-color: #222096;
+.accent {
+    background: var(--primary-color);
 }
 
-.accent {
-    background-color: #312eb5;
+.accent:hover {
+    background: var(--primary-hover-color);
 }
