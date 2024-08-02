@@ -4,8 +4,8 @@ import "./index.css";
 import Menu from "./Pages/Menu/Menu";
 import Cart from "./Pages/Cart/Cart";
 import Error from "./Pages/Error/Error";
-import { createBrowserRouter, RouterProvider  } from "react-router-dom";
-import Layout from "./Layout/Menu/Menu.tsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Layout from "./Layout/Menu/Layout.tsx";
 
 const router = createBrowserRouter([
     {
@@ -14,27 +14,26 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Menu />
+                element: <Menu />,
             },
             {
                 path: "/cart",
-                element: <Cart />
-            }
-        ]
+                element: <Cart />,
+            },
+        ],
     },
     {
         path: "/cart",
-        element: <Cart />
+        element: <Cart />,
     },
     {
         path: "/error",
-        element: <Error />
-
-    }
-])
+        element: <Error />,
+    },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-            <RouterProvider router={router} />
+        <RouterProvider router={router} />
     </React.StrictMode>
 );
