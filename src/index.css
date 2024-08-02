@@ -1,7 +1,7 @@
 :root {
     --font: "Poppins", sans-serif;
-    --primary-color: #06d001;
-    --primary-hover-color: #069604;
+    --primary-color: #C71585;
+    --primary-hover-color: #FF1493;
     --text-color: #000;
     --text-secondary-color: #5b5b5e;
     --white-color: #fff;
@@ -12,3 +12,6 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+/* 
+60px
+ */
