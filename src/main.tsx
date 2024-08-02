@@ -1,13 +1,40 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
 import "./index.css";
-import { BrowserRouter } from "react-router-dom";
+import Menu from "./Pages/Menu/Menu";
+import Cart from "./Pages/Cart/Cart";
+import Error from "./Pages/Error/Error";
+import { createBrowserRouter, RouterProvider  } from "react-router-dom";
+import Layout from "./Layout/Menu/Menu.tsx";
+
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <Layout />,
+        children: [
+            {
+                path: "/",
+                element: <Menu />
+            },
+            {
+                path: "/cart",
+                element: <Cart />
+            }
+        ]
+    },
+    {
+        path: "/cart",
+        element: <Cart />
+    },
+    {
+        path: "/error",
+        element: <Error />
+
+    }
+])
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
+            <RouterProvider router={router} />
     </React.StrictMode>
 );

@@ -1,9 +1,11 @@
 
 
 const Error = () => {
-  return (
-    <div>Not Found 404</div>
-  )
-}
+    return (
+        <div>
+            <p>Error</p>
+        </div>
+    );
+};
 
-export default Error
+export default Error;
