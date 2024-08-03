@@ -78,7 +78,8 @@
     background-color: var(--secondary-color);
 }
 
-.outlet {
+.content {
     padding: 2rem 3.75rem;
+    width: 100%;
 }
 

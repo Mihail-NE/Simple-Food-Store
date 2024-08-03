@@ -56,7 +56,7 @@ const Layout = () => {
                     Выйти
                 </Button>
             </div>
-            <div className={styles["outlet"]}>
+            <div className={styles["content"]}>
                 <Outlet />
             </div>
         </div>
