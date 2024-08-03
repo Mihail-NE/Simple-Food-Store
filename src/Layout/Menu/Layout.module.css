@@ -77,3 +77,8 @@
 .button:hover {
     background-color: var(--secondary-color);
 }
+
+.outlet {
+    padding: 2rem 3.75rem;
+}
+

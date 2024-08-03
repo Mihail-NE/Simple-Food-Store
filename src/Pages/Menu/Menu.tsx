@@ -1,9 +1,10 @@
 
+import Heading from './../../components/Heading/Heading';
 
 const Menu = () => {
     return (
         <div>
-            Menu
+            <Heading>Меню</Heading>
         </div>
     );
 };

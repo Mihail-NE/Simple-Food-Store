@@ -1,4 +1,4 @@
-import styles from "./Input.module.css";
+import styles from "./Heading.module.css";
 import cn from "classnames";
 import { HeadingProps } from "./Heading.props.ts";
 
