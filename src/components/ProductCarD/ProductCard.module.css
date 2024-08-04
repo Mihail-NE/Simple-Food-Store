@@ -1,3 +1,79 @@
 .head {
     position: relative;
-} 
+    background-image: url(./public/margarita.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 1.2rem;
+    height: 10rem;
+}
+.card {
+    padding: 2rem 0.5rem;
+    background-color: #fff;
+    border-radius: 1.2rem;
+    width: 20rem;
+    box-shadow: 15px 20px 45px 0px rgb(233, 233, 233, 0.25);
+}
+
+.price {
+    position: absolute;
+    font-size: 0.9rem;
+    background-color: #fff;
+    padding: 0.2rem 0.8rem;
+    border-radius: 1.2rem;
+    top: 1rem;
+    left: 1rem;
+}
+span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+.add-to-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    border: none;
+    padding: 0.3rem;
+    border-radius: 0.7rem;
+    background-color: var(--primary-color);
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.range {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    left: 1rem;
+    bottom: -0.8rem;
+    box-shadow: 0px 2px 20px -9px rgba(255, 0, 211, 1);
+    cursor: pointer;
+}
+
+.body {
+    padding: 1rem 0.5rem;
+}
+
+.footer {
+    padding: 1rem;
+}
+
+.title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+.description {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-secondary-color);
+}
