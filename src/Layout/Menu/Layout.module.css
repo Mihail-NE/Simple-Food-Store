@@ -50,10 +50,12 @@
 }
 
 .menu-icon {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     font-weight: 500;
+    
 }
+
 
 .active {
     color: var(--primary-color);
