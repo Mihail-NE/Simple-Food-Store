@@ -77,3 +77,8 @@ span {
     font-weight: 400;
     color: var(--text-secondary-color);
 }
+
+
+.link {
+    text-decoration: none;
+}
