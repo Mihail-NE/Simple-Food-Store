@@ -1,29 +1,35 @@
 import styles from "./Menu.module.css";
 import Search from "../../components/Search/Search";
 import Heading from "./../../components/Heading/Heading";
-import ProductCard from "../../components/ProductCarD/ProductCard";
 import { data } from "../../Help/data";
+import MenuList from "./MenuList/MenuList";
 // import axios from "axios";
 // import { PREFIX } from "../../Help/API";
 // import { Product } from "../../interfaces/product.interface";
-import {  useState } from "react";
+// import {  useState } from "react";
+// import { AxiosError } from "axios";
 // import { useEffect } from "react";
 
 const Menu = () => {
     // const [products, setProducts] = useState<Product[]>([]);
-    const [isLoading, setIsLoading] = useState(false);
+    // const [isLoading, setIsLoading] = useState(false);
+    // const [error, setError] = useState<string | undefined>();
 
-    const getMenu = async () => {
-        try {
-            setIsLoading(true);
-            const { data } = await axios.get<Product[]>(`${PREFIX}/products`);
-            setProducts(data);
-            setIsLoading(false);
-        } catch (e) {
-            console.error();
-            setIsLoading(false)
-        }
-    };
+    // const getMenu = async () => {
+    //     try {
+    //         setIsLoading(true);
+    //         const { data } = await axios.get<Product[]>(`${PREFIX}/products`);
+    //         setProducts(data);
+    //         setIsLoading(false);
+    //     } catch (e) {
+    //         console.error(e);
+    //         if(e instanceof AxiosError) {
+    //             setError(e.message);
+    //         }
+    //         setIsLoading(false)
+    //         return
+    //     }
+    // };
 
     // const getMenu = async () => {
     //     try {
@@ -53,17 +59,11 @@ const Menu = () => {
                 cnl
             </div>
             <div>
-                {!isLoading && products.map((p) => (
-                    <ProductCard
-                        id={p.id}
-                        name={p.name}
-                        ingredients={p.ingredients.join(", ")}
-                        rating={p.rating}
-                        price={p.price}
-                        image={p.image}
-                    />
-                ))}
-                {isLoading && <p>Загружаем продукты...</p>}
+                {/* {error && <p>{error}</p>}
+                {!isLoading && <MenuList products={products} }
+                {isLoading && <p>Загружаем продукты...</p>} */}
+
+                <MenuList products={products}/>
             </div>
         </>
     );
