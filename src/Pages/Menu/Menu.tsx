@@ -3,12 +3,24 @@ import Search from "../../components/Search/Search";
 import Heading from "./../../components/Heading/Heading";
 import ProductCard from "../../components/ProductCarD/ProductCard";
 import { data } from "../../Help/data";
+// import axios from "axios";
 // import { PREFIX } from "../../Help/API";
 // import { Product } from "../../interfaces/product.interface";
 // import { useEffect, useState } from "react";
 
 const Menu = () => {
     // const [products, setProducts] = useState<Product[]>([]);
+
+    // const getMenu = async () => {
+    //     try {
+    //         const { data } = await axios.get<Product[]>(`${PREFIX}/products`);
+    //         setProducts(data);
+    //     } catch (e) {
+    //         console.error();
+    //         return;
+    //     }
+    // };
+
     // const getMenu = async () => {
     //     try {
     //         const res = await fetch(`${PREFIX}/products`);
@@ -19,7 +31,6 @@ const Menu = () => {
     //         setProducts(data);
     //     } catch (error) {
     //         console.error();
-    //         ("error");
     //         return;
     //     }
     // };
@@ -28,7 +39,7 @@ const Menu = () => {
     //     getMenu();
     // }, []);
 
-    const products = data
+    const products = data;
 
     return (
         <>
