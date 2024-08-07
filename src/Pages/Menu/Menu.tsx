@@ -56,7 +56,6 @@ const Menu = () => {
             <div className={styles["head"]}>
                 <Heading>Меню</Heading>
                 <Search placeholder="Введите название блюда" />
-                cnl
             </div>
             <div>
                 {/* {error && <p>{error}</p>}
