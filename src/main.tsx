@@ -9,6 +9,9 @@ import Layout from "./Layout/Menu/Layout.tsx";
 import Product from "./Pages/Product/Product.tsx";
 import axios from "axios";
 import { PREFIX } from "./Help/API.ts";
+import AuthLayout from "./Layout/Auth/AuthLayout.tsx";
+import Login from "./Pages/Login/Login.tsx";
+import Register from "./Pages/Register/Register.tsx";
 
 const Menu = lazy(() => import("./Pages/Menu/Menu"));
 
@@ -35,10 +38,10 @@ const router = createBrowserRouter([
                 errorElement: <Error />,
                 loader: async ({ params }) => {
                     return defer({
-                        data: axios.get(`${PREFIX}/product/${params.id}`)
-                        .then(data => data)
-
-                })
+                        data: axios
+                            .get(`${PREFIX}/product/${params.id}`)
+                            .then((data) => data),
+                    });
 
                     // const { data } = await axios.get(
                     //     `${PREFIX}/product/${params.id}`
@@ -49,6 +52,15 @@ const router = createBrowserRouter([
         ],
     },
     {
+        path: "/auth",
+        element: <AuthLayout />,
+        children: [
+            { path: "login", element: <Login /> },
+            { path: "register", element: <Register /> },
+        ],
+    },
+
+    {
         path: "/cart",
         element: <Cart />,
     },
@@ -56,6 +68,7 @@ const router = createBrowserRouter([
         path: "/error",
         element: <Error />,
     },
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
