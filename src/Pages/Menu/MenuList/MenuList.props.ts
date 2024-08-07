@@ -1,4 +1,4 @@
-import Product from "../../Product/Product";
+import { Product } from "../../../interfaces/product.interface";
 
 export interface MenuListProps {
     products: Product[];
