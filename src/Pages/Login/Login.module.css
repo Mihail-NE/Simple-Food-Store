@@ -1,0 +1,46 @@
+.form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    min-width: 30rem;
+}
+
+.email {
+    display: flex;
+    flex-direction: column;
+}
+
+.password {
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    padding: 0.7rem 10rem;
+}
+
+.label {
+    font-size: 0.9rem;
+    color: var(--text-secondary-color);
+}
+
+.links {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    margin: 2rem 0 0 0;
+    font-size: 0.8rem;
+}
+.register {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}

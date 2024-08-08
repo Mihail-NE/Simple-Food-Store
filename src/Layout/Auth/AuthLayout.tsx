@@ -5,7 +5,7 @@ const AuthLayout = () => {
     return (
         <div className={styles["layout"]}>
             <div className={styles["logo"]}>
-                <img className={styles["icon"]} src="./public/logo.svg" />
+                <img className={styles["icon"]} src="/logo.svg" />
             </div>
             <div className={styles["content"]}>
                 <Outlet />
