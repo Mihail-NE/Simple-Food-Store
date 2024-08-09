@@ -1,12 +1,11 @@
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import Button from "../../components/Button/Button";
 import Heading from "../../components/Heading/Heading";
 import Input from "../../components/Input/Input";
 import styles from "./Login.module.css";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { PREFIX } from "../../Help/API";
-
 
 export interface LoginForm {
     email: {
@@ -18,8 +17,11 @@ export interface LoginForm {
 }
 
 const Login = () => {
+    const [error, setError] = useState<string | null>();
+
     const sumbit = (e: FormEvent) => {
         e.preventDefault();
+        setError(null);
         const target = e.target as typeof e.target & LoginForm;
         const { email, password } = target;
         console.log(email.value);
@@ -28,16 +30,24 @@ const Login = () => {
     };
 
     const sendLogin = async (email: string, password: string) => {
-        const { data } = await axios.post(`${PREFIX}/auth/login`, {
-            email,
-            password,
-        });
-        console.log(data)
+        try {
+            const { data } = await axios.post(`${PREFIX}/auth/login`, {
+                email,
+                password,
+            });
+            console.log(data);
+        } catch (e) {
+            if (e instanceof AxiosError) {
+                console.log(e);
+                setError(e.response?.data.message);
+            }
+        }
     };
 
     return (
         <div>
             <Heading>Вход</Heading>
+            {error && <div className={styles["error"]}>{error}</div>}
             <form className={styles["form"]} onSubmit={sumbit}>
                 <div className={styles["email"]}>
                     <label className={styles["label"]} htmlFor="email">
@@ -56,7 +66,6 @@ const Login = () => {
                         type="password"
                         name="password"
                     />
-
                 </div>
 
                 <div className={styles["links"]}>

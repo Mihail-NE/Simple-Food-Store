@@ -6,6 +6,7 @@
     --text-secondary-color: #5b5b5e;
     --white-color: #fff;
     --separator-color: #D4D6E0
+    --error-color: #ff0000;
 }
 
 body {
@@ -13,6 +14,6 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-/* 
+/*
 60px
  */
