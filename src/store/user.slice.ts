@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export interface userState {
   JWT: string | null;
@@ -10,11 +10,9 @@ const initialState: userState = {
 
 export const userSlice = createSlice({
   name: 'user',
-  initialState: {
-    user: null,
-  },
+  initialState,
   reducers: {
-    addJWT: (state, action) => {
+    addJWT: (state, action: PayloadAction<string>) => {
       state.JWT = action.payload;
     },
     logout: (state) => {
@@ -26,4 +24,4 @@ export const userSlice = createSlice({
 
 
 export default userSlice.reducer
-export const { addJWT, logout } = userSlice.actions
+export const UserActions = userSlice.actions

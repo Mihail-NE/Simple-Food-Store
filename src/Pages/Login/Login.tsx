@@ -7,6 +7,9 @@ import { Link, useNavigate } from "react-router-dom";
 import axios, { AxiosError } from "axios";
 import { PREFIX } from "../../Help/API";
 import { LoginResponse } from "../../interfaces/auth.inteface";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../store/store";
+import { UserActions } from "../../store/user.slice";
 
 export interface LoginForm {
     email: {
@@ -20,6 +23,7 @@ export interface LoginForm {
 const Login = () => {
     const [error, setError] = useState<string | null>();
     const navigate = useNavigate();
+    const dispatch = useDispatch<AppDispatch>();
 
     const sumbit = (e: FormEvent) => {
         e.preventDefault();
@@ -42,6 +46,7 @@ const Login = () => {
             );
             console.log(data);
             localStorage.setItem("JWT", JSON.stringify(data));
+            dispatch(UserActions.addJWT(data.access_token));
             navigate("/");
         } catch (e) {
             if (e instanceof AxiosError) {
