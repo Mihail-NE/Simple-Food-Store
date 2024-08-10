@@ -45,7 +45,6 @@ const Login = () => {
                 }
             );
             console.log(data);
-            localStorage.setItem("JWT", JSON.stringify(data));
             dispatch(UserActions.addJWT(data.access_token));
             navigate("/");
         } catch (e) {
